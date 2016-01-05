@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D45993C41C3B778A00F4154E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D45993C31C3B778A00F4154E /* README.md */; };
 		D45E39F31C3A59E6000B241D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E39F21C3A59E6000B241D /* main.m */; };
 		D45E39F61C3A59E6000B241D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E39F51C3A59E6000B241D /* AppDelegate.m */; };
 		D45E39F91C3A59E6000B241D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E39F81C3A59E6000B241D /* ViewController.m */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D45993C31C3B778A00F4154E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D45E39E81C36DC9B000B241D /* XXXRoundMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XXXRoundMenuButton.h; path = Views/XXXRoundMenuButton.h; sourceTree = "<group>"; };
 		D45E39E91C36DC9B000B241D /* XXXRoundMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XXXRoundMenuButton.m; path = Views/XXXRoundMenuButton.m; sourceTree = "<group>"; };
 		D45E39EF1C3A59E6000B241D /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +49,7 @@
 		D45E39C41C36DC64000B241D = {
 			isa = PBXGroup;
 			children = (
+				D45993C31C3B778A00F4154E /* README.md */,
 				D45E3A0A1C3A604C000B241D /* XXXRoundMenu.gif */,
 				D45E39E71C36DC6A000B241D /* Views */,
 				D45E39F01C3A59E6000B241D /* demo */,
@@ -168,6 +171,7 @@
 			files = (
 				D45E3A061C3A5AE5000B241D /* XXXRoundMenuButton.m in Sources */,
 				D45E39F91C3A59E6000B241D /* ViewController.m in Sources */,
+				D45993C41C3B778A00F4154E /* README.md in Sources */,
 				D45E39F61C3A59E6000B241D /* AppDelegate.m in Sources */,
 				D45E39F31C3A59E6000B241D /* main.m in Sources */,
 			);

@@ -394,6 +394,7 @@
         button.alpha = 0;
         button.tag = idx + 9998;
         button.transform = CGAffineTransformMakeScale(0.5, 0.5);
+        button.center = self.center;
         
         [UIView animateWithDuration:0.2
                               delay:onebyone?idx*0.02:0
@@ -403,11 +404,12 @@
                          animations:^{
                              button.alpha = 1;
                              button.transform = CGAffineTransformIdentity;
+                             button.center = CGPointMake(self.center.x + raduis * sin(start + layoutDegree/(icons.count-1)*idx), self.center.y + raduis * cos(start + layoutDegree/(icons.count-1)*idx));
                          } completion:^(BOOL finished) {
                              
                          }];
         
-        button.center = CGPointMake(self.center.x + raduis * sin(start + layoutDegree/(icons.count-1)*idx), self.center.y + raduis * cos(start + layoutDegree/(icons.count-1)*idx));
+
     }];
 }
 
