@@ -8,7 +8,7 @@ and [Secret Project by Anton Aheichanka Follow for InVision Follow](https://drib
 
 ##Easy use interface
 
-```
+```objc
 self.roundMenu.centerButtonSize = CGSizeMake(44, 44);
 self.roundMenu.centerIconType = XXXIconTypeUserDraw;
 self.roundMenu.tintColor = [UIColor whiteColor];
