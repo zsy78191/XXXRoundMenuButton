@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Xxxroundmenubutton by zsy78191</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Xxxroundmenubutton</h1>
+          <h2>A simple circle style menu.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/zsy78191/XXXRoundMenuButton/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/zsy78191/XXXRoundMenuButton/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/zsy78191/XXXRoundMenuButton" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="xxxroundmenubutton" class="anchor" href="#xxxroundmenubutton" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>XXXRoundMenuButton</h1>
+
+<p>A simple circle style menu. Design from <a href="https://dribbble.com/shots/1956586-Filter-Menu">Filter Menu by Anton Aheichanka for InVision</a></p>
+
+<p>and <a href="https://dribbble.com/shots/1928064-Secret-Project">Secret Project by Anton Aheichanka Follow for InVision Follow</a></p>
+
+<p><img src="https://raw.githubusercontent.com/zsy78191/XXXRoundMenuButton/master/XXXRoundMenu.gif" alt="preview"></p>
+
+<h2>
+<a id="easy-use-interface" class="anchor" href="#easy-use-interface" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Easy use interface</h2>
+
+<div class="highlight highlight-source-objc"><pre>self.roundMenu.centerButtonSize = CGSizeMake(<span class="pl-c1">44</span>, <span class="pl-c1">44</span>);
+self.roundMenu.centerIconType = XXXIconTypeUserDraw;
+self.roundMenu.tintColor = [UIColor <span class="pl-c1">whiteColor</span>];
+self.roundMenu.jumpOutButtonOnebyOne = <span class="pl-c1">YES</span>;
+
+[<span class="pl-v">self</span>.roundMenu <span class="pl-c1">setDrawCenterButtonIconBlock:</span>^(<span class="pl-c1">CGRect</span> rect, UIControlState state) {
+
+<span class="pl-k">if</span> (state == UIControlStateNormal)
+{
+UIBezierPath* rectanglePath = [UIBezierPath <span class="pl-c1">bezierPathWithRect:</span> <span class="pl-c1">CGRectMake</span>((rect.size.width - <span class="pl-c1">15</span>)/<span class="pl-c1">2</span>, rect.size.height/<span class="pl-c1">2</span> - <span class="pl-c1">5</span>, <span class="pl-c1">15</span>, <span class="pl-c1">1</span>)];
+[UIColor.whiteColor <span class="pl-c1">setFill</span>];
+[rectanglePath <span class="pl-c1">fill</span>];
+
+
+UIBezierPath* rectangle2Path = [UIBezierPath <span class="pl-c1">bezierPathWithRect:</span> <span class="pl-c1">CGRectMake</span>((rect.size.width - <span class="pl-c1">15</span>)/<span class="pl-c1">2</span>, rect.size.height/<span class="pl-c1">2</span>, <span class="pl-c1">15</span>, <span class="pl-c1">1</span>)];
+[UIColor.whiteColor <span class="pl-c1">setFill</span>];
+[rectangle2Path <span class="pl-c1">fill</span>];
+
+UIBezierPath* rectangle3Path = [UIBezierPath <span class="pl-c1">bezierPathWithRect:</span> <span class="pl-c1">CGRectMake</span>((rect.size.width - <span class="pl-c1">15</span>)/<span class="pl-c1">2</span>, rect.size.height/<span class="pl-c1">2</span> + <span class="pl-c1">5</span>, <span class="pl-c1">15</span>, <span class="pl-c1">1</span>)];
+[UIColor.whiteColor <span class="pl-c1">setFill</span>];
+[rectangle3Path <span class="pl-c1">fill</span>];
+}
+}];
+
+[<span class="pl-v">self</span>.roundMenu <span class="pl-c1">loadButtonWithIcons:</span>@[
+[UIImage <span class="pl-c1">imageNamed:</span><span class="pl-s"><span class="pl-pds">@"</span>icon_can<span class="pl-pds">"</span></span>],
+[UIImage <span class="pl-c1">imageNamed:</span><span class="pl-s"><span class="pl-pds">@"</span>icon_pos<span class="pl-pds">"</span></span>],
+[UIImage <span class="pl-c1">imageNamed:</span><span class="pl-s"><span class="pl-pds">@"</span>icon_img<span class="pl-pds">"</span></span>],
+[UIImage <span class="pl-c1">imageNamed:</span><span class="pl-s"><span class="pl-pds">@"</span>icon_can<span class="pl-pds">"</span></span>],
+[UIImage <span class="pl-c1">imageNamed:</span><span class="pl-s"><span class="pl-pds">@"</span>icon_pos<span class="pl-pds">"</span></span>],
+[UIImage <span class="pl-c1">imageNamed:</span><span class="pl-s"><span class="pl-pds">@"</span>icon_img<span class="pl-pds">"</span></span>],
+[UIImage <span class="pl-c1">imageNamed:</span><span class="pl-s"><span class="pl-pds">@"</span>icon_can<span class="pl-pds">"</span></span>],
+[UIImage <span class="pl-c1">imageNamed:</span><span class="pl-s"><span class="pl-pds">@"</span>icon_pos<span class="pl-pds">"</span></span>],
+[UIImage <span class="pl-c1">imageNamed:</span><span class="pl-s"><span class="pl-pds">@"</span>icon_img<span class="pl-pds">"</span></span>]
+
+] <span class="pl-c1">startDegree:</span><span class="pl-c1">0</span> <span class="pl-c1">layoutDegree:</span>M_PI*<span class="pl-c1">2</span>*<span class="pl-c1">7</span>/<span class="pl-c1">8</span>];
+
+[<span class="pl-v">self</span>.roundMenu <span class="pl-c1">setButtonClickBlock:</span>^(<span class="pl-k">NSInteger</span> idx) {
+
+<span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span>button <span class="pl-c1">%@</span> clicked !<span class="pl-pds">"</span></span>,@(idx));
+}];
+
+
+<span class="pl-c">/**</span>
+<span class="pl-c">*  RoundMenu2 config</span>
+<span class="pl-c">*/</span>
+[<span class="pl-v">self</span>.roundMenu2 <span class="pl-c1">loadButtonWithIcons:</span>@[
+[UIImage <span class="pl-c1">imageNamed:</span><span class="pl-s"><span class="pl-pds">@"</span>icon_can<span class="pl-pds">"</span></span>],
+[UIImage <span class="pl-c1">imageNamed:</span><span class="pl-s"><span class="pl-pds">@"</span>icon_pos<span class="pl-pds">"</span></span>],
+[UIImage <span class="pl-c1">imageNamed:</span><span class="pl-s"><span class="pl-pds">@"</span>icon_img<span class="pl-pds">"</span></span>]
+
+] <span class="pl-c1">startDegree:</span>-M_PI <span class="pl-c1">layoutDegree:</span>M_PI/<span class="pl-c1">2</span>];
+[<span class="pl-v">self</span>.roundMenu2 <span class="pl-c1">setButtonClickBlock:</span>^(<span class="pl-k">NSInteger</span> idx) {
+
+<span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span>button <span class="pl-c1">%@</span> clicked !<span class="pl-pds">"</span></span>,@(idx));
+}];
+
+self.roundMenu2.tintColor = [UIColor <span class="pl-c1">whiteColor</span>];
+
+self.roundMenu2.mainColor = [UIColor <span class="pl-c1">colorWithRed:</span><span class="pl-c1">0.13</span> <span class="pl-c1">green:</span><span class="pl-c1">0.58</span> <span class="pl-c1">blue:</span><span class="pl-c1">0.95</span> <span class="pl-c1">alpha:</span><span class="pl-c1">1</span>];</pre></div>
+        </section>
+
+        <footer>
+          Xxxroundmenubutton is maintained by <a href="https://github.com/zsy78191">zsy78191</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
