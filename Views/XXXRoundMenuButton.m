@@ -213,7 +213,7 @@
     [UIView animateWithDuration:0.24
                           delay:0
          usingSpringWithDamping:0.6 initialSpringVelocity:5
-                        options:UIViewAnimationOptionCurveEaseInOut
+                        options:UIViewAnimationOptionCurveLinear
                      animations:^{
                          
                          if (selected) {
@@ -345,7 +345,7 @@
     [UIView animateWithDuration:0.24
                           delay:0
          usingSpringWithDamping:0.6 initialSpringVelocity:10
-                        options:UIViewAnimationOptionCurveEaseInOut
+                        options:UIViewAnimationOptionCurveLinear
                      animations:^{
                         self.transform = CGAffineTransformMakeRotation(selected?M_PI_2/2:0);
                          
@@ -400,7 +400,7 @@
                               delay:onebyone?idx*0.02:0
              usingSpringWithDamping:0.5
               initialSpringVelocity:5
-                            options:UIViewAnimationOptionCurveEaseIn
+                            options:UIViewAnimationOptionCurveLinear
                          animations:^{
                              button.alpha = 1;
                              button.transform = CGAffineTransformIdentity;
