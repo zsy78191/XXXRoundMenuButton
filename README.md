@@ -1,10 +1,10 @@
 # XXXRoundMenuButton
-A simple circle style menu. Design from [Filter Menu by Anton Aheichanka for InVision](https://dribbble.com/shots/1956586-Filter-Menu)
+一个简单的圆形菜单控件。设计来自InVision团队的 [Filter Menu by Anton Aheichanka for InVision](https://dribbble.com/shots/1956586-Filter-Menu) 和  [Secret Project by Anton Aheichanka Follow for InVision Follow](https://dribbble.com/shots/1928064-Secret-Project)
 
+A simple circle style menu. Design from [Filter Menu by Anton Aheichanka for InVision](https://dribbble.com/shots/1956586-Filter-Menu)
 and [Secret Project by Anton Aheichanka Follow for InVision Follow](https://dribbble.com/shots/1928064-Secret-Project)
 
 ![preview](https://raw.githubusercontent.com/zsy78191/XXXRoundMenuButton/master/XXXRoundMenu.gif)
-
 
 ##Easy use interface
 
