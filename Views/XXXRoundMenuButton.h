@@ -56,5 +56,8 @@ typedef NS_OPTIONS(NSInteger, XXXIconType) {
 @property (nonatomic, strong) void (^drawCenterButtonIconBlock)(CGRect rect , UIControlState state);
 
 
+@property (nonatomic, assign) BOOL isOpened;
+
+
 
 @end

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,6 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRn-bj-MIi">
+                                <rect key="frame" x="279" y="339" width="121" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="TPi-O8-OhD"/>
+                                    <constraint firstAttribute="width" constant="121" id="ogd-98-UJ8"/>
+                                </constraints>
+                                <state key="normal" title="Cover Test"/>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fd-7R-vhA" customClass="XXXRoundMenuButton">
                                 <rect key="frame" x="200" y="200" width="200" height="200"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -37,10 +45,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="rRn-bj-MIi" firstAttribute="centerY" secondItem="4fd-7R-vhA" secondAttribute="centerY" constant="69.5" id="5Ww-TD-K0x"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tmo-RO-FVW" secondAttribute="trailing" constant="-79" id="CBq-8a-mAI"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Tmo-RO-FVW" secondAttribute="bottom" constant="-61" id="Eg2-8G-7Ex"/>
                             <constraint firstItem="4fd-7R-vhA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nd9-4w-zxV"/>
                             <constraint firstItem="4fd-7R-vhA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Tjx-Qc-e9S"/>
+                            <constraint firstItem="rRn-bj-MIi" firstAttribute="centerX" secondItem="4fd-7R-vhA" secondAttribute="centerX" constant="39.5" id="ibg-tU-913"/>
                         </constraints>
                     </view>
                     <connections>

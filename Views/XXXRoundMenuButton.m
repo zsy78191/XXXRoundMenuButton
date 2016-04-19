@@ -210,6 +210,7 @@
         [self.roundCircle clean];
     }
     
+    self.isOpened = selected;
     [UIView animateWithDuration:0.24
                           delay:0
          usingSpringWithDamping:0.6 initialSpringVelocity:5
@@ -262,6 +263,20 @@
 
 }
 
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+{
+    UIView* view = [super hitTest:point withEvent:event];
+    
+    if (self.isOpened) {
+
+        return view;
+    }
+    
+    if (CGRectContainsPoint(self.centerButton.frame, point)) {
+        return self.centerButton;
+    }
+    return nil;
+}
 
 @end
 
