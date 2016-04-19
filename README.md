@@ -5,6 +5,25 @@ and [Secret Project by Anton Aheichanka Follow for InVision Follow](https://drib
 
 ![preview](https://raw.githubusercontent.com/zsy78191/XXXRoundMenuButton/master/XXXRoundMenu.gif)
 
+##Angle
+ 
+```objc
+/**
+*  config function
+*
+*  @param icons        array of UIImages
+*  @param degree       start degree
+*  @param layoutDegree angle span
+*/
+- (void)loadButtonWithIcons:(NSArray<UIImage*>*)icons startDegree:(CGFloat)degree layoutDegree:(CGFloat)layoutDegree;
+
+```
+
+startDegree 0 degree is ⬇️ ， layoutDegree is the span between start and end, **counterclockwise**.
+
+##Update
+
+2016.4.19 Fix the issue that touch event can't send to UIView covered by XXXRoundMenuButton
 
 ##Easy use interface
 
