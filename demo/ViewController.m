@@ -33,7 +33,6 @@
             [UIColor.whiteColor setFill];
             [rectanglePath fill];
             
-            
             UIBezierPath* rectangle2Path = [UIBezierPath bezierPathWithRect: CGRectMake((rect.size.width - 15)/2, rect.size.height/2, 15, 1)];
             [UIColor.whiteColor setFill];
             [rectangle2Path fill];
@@ -79,6 +78,9 @@
         
         NSLog(@"button %@ clicked !",@(idx));
     }];
+    
+    [self.roundMenu2 setCenterIcon:[UIImage imageNamed:@"icon_pos"]];
+    [self.roundMenu2 setCenterIconType:XXXIconTypeCustomImage];
     
     self.roundMenu2.tintColor = [UIColor whiteColor];
     

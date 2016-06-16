@@ -11,7 +11,8 @@
 typedef NS_OPTIONS(NSInteger, XXXIconType) {
     
     XXXIconTypePlus = 0, // plus icon
-    XXXIconTypeUserDraw  // draw icon by youself
+    XXXIconTypeUserDraw,  // draw icon by youself
+    XXXIconTypeCustomImage,
 };
 
 @interface XXXRoundMenuButton : UIControl
@@ -25,6 +26,12 @@ typedef NS_OPTIONS(NSInteger, XXXIconType) {
  *  "XXXIconTypePlus" is a "plus" icon. "XXXIconTypeUserDraw" must use "drawCenterButtonIconBlock" draw with CoreGraphic.
  */
 @property (nonatomic, assign) XXXIconType centerIconType;
+
+/**
+ *  default is nil, only used when centerIconType is XXXIconTypeCustomImage
+ */
+@property (nonatomic, strong) UIImage* centerIcon;
+
 
 /**
  *  animate style, if you want icon jump out one by one , set it YES, default is NO;
@@ -43,7 +50,7 @@ typedef NS_OPTIONS(NSInteger, XXXIconType) {
  *  @param degree       start degree
  *  @param layoutDegree angle span
  */
-- (void)loadButtonWithIcons:(NSArray<UIImage*>*)icons startDegree:(CGFloat)degree layoutDegree:(CGFloat)layoutDegree;
+- (void)loadButtonWithIcons:(NSArray<UIImage*>*)icons startDegree:(double)degree layoutDegree:(double)layoutDegree;
 
 /**
  *  click block

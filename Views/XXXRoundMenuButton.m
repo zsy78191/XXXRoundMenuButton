@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) UIColor* normalColor;
 @property (nonatomic, strong) UIColor* selectedColor;
+@property (nonatomic, strong) UIImage* centerIcon;
+@property (nonatomic, strong) UIImageView* centerIconView;
 
 @property (nonatomic, assign) XXXIconType type;
 - (instancetype)initWithFrame:(CGRect)frame type:(XXXIconType)type;
@@ -119,6 +121,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor clearColor];
         [self setup];
     }
     return self;
@@ -200,6 +203,17 @@
     
     [self.roundCircle setNeedsDisplay];
     
+}
+
+- (void)setCenterIcon:(UIImage *)centerIcon
+{
+    [self.centerButton setCenterIcon:centerIcon];
+    [self.centerButton setNeedsDisplay];
+}
+
+- (UIImage *)centerIcon
+{
+    return [self.centerButton centerIcon];
 }
 
 - (void)setSelected:(BOOL)selected
@@ -284,6 +298,17 @@
 
 @implementation XXX_centerButton
 
+- (UIImageView *)centerIconView
+{
+    if (!_centerIconView) {
+        _centerIconView = [[UIImageView alloc] initWithFrame:self.bounds];
+        [self addSubview:_centerIconView];
+        _centerIconView.alpha = 0;
+        _centerIconView.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    return _centerIconView;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -322,7 +347,7 @@
     UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(0, 0, rect.size.width, rect.size.height)];
     [color setFill];
     [ovalPath fill];
-    
+     self.centerIconView.alpha = 0;
     
     if (self.type == XXXIconTypePlus || self.state == UIControlStateSelected) {
         //// Rectangle Drawing
@@ -341,6 +366,14 @@
         if ([self.superview respondsToSelector:@selector(drawCentenIconInRect:state:)]) {
             [(id)self.superview drawCentenIconInRect:rect state:self.state];
         }
+    }
+    else if (self.type == XXXIconTypeCustomImage){
+       
+        if (self.centerIcon) {
+            [self.centerIconView setImage:self.centerIcon];
+            self.centerIconView.alpha = 1;
+        }
+        
     }
 }
 
@@ -447,5 +480,7 @@
     [color setFill];
     [ovalPath fill];
 }
+
+
 
 @end
