@@ -424,7 +424,7 @@
     }
 }
 
-- (void)animatedLoadIcons:(NSArray<UIImage*>*)icons start:(CGFloat)start layoutDegree:(CGFloat)layoutDegree oneByOne:(BOOL)onebyone
+- (void)animatedLoadIcons:(NSArray<UIImage*>*)icons start:(double)start layoutDegree:(double)layoutDegree oneByOne:(BOOL)onebyone
 {
     [self clean];
     
