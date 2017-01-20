@@ -23,7 +23,7 @@
 @interface XXX_roundCircle : UIView
 @property (nonatomic, strong) UIColor* circleColor;
 - (void)clean;
-- (void)animatedLoadIcons:(NSArray<UIImage*>*)icons start:(CGFloat)start layoutDegree:(CGFloat)layoutDegree oneByOne:(BOOL)onebyone;
+- (void)animatedLoadIcons:(NSArray<UIImage*>*)icons start:(float)start layoutDegree:(float)layoutDegree oneByOne:(BOOL)onebyone;
 @end
 
 @interface XXXRoundMenuButton ()
@@ -35,8 +35,8 @@
 
 - (void)drawCentenIconInRect:(CGRect)rect state:(UIControlState)state;
 
-@property (nonatomic, assign) CGFloat startDegree;
-@property (nonatomic, assign) CGFloat layoutDegree;
+@property (nonatomic, assign) float startDegree;
+@property (nonatomic, assign) float layoutDegree;
 @property (nonatomic, strong) NSMutableArray* icons;
 
 
@@ -95,7 +95,7 @@
     return _icons;
 }
 
-- (void)loadButtonWithIcons:(NSArray<UIImage *> *)icons startDegree:(CGFloat)degree layoutDegree:(CGFloat)layoutDegree
+- (void)loadButtonWithIcons:(NSArray<UIImage *> *)icons startDegree:(float)degree layoutDegree:(float)layoutDegree
 {
     [self.icons removeAllObjects];
     [self.icons addObjectsFromArray:icons];
@@ -425,7 +425,7 @@
     }
 }
 
-- (void)animatedLoadIcons:(NSArray<UIImage*>*)icons start:(double)start layoutDegree:(double)layoutDegree oneByOne:(BOOL)onebyone
+- (void)animatedLoadIcons:(NSArray<UIImage*>*)icons start:(float)start layoutDegree:(float)layoutDegree oneByOne:(BOOL)onebyone
 {
     [self clean];
     

@@ -50,7 +50,7 @@ typedef NS_OPTIONS(NSInteger, XXXIconType) {
  *  @param degree       start degree
  *  @param layoutDegree angle span
  */
-- (void)loadButtonWithIcons:(NSArray<UIImage*>*)icons startDegree:(double)degree layoutDegree:(double)layoutDegree;
+- (void)loadButtonWithIcons:(NSArray<UIImage*>*)icons startDegree:(float)degree layoutDegree:(float)layoutDegree;
 
 /**
  *  click block
