@@ -3,7 +3,7 @@ Add offset after the menu is opened.
 ```objc
 self.roundMenu2.offsetAfterOpened = CGSizeMake(-80, -80);
 ```
-![preview](https://raw.githubusercontent.com/zsy78191/XXXRoundMenuButton/master/untitled.gif)
+![preview](https://raw.githubusercontent.com/zsy78191/XXXRoundMenuButton/master/Untitled.gif)
 
 #new at 6.16
 1. Add function to set custom image as center button icon.
