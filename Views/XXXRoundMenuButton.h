@@ -72,5 +72,10 @@ typedef NS_OPTIONS(NSInteger, XXXIconType) {
 @property (nonatomic, assign) CGSize offsetAfterOpened;
 
 
+/**
+ Real raduis is frame.size.width/2 - raduisForIcons. raduisForIcons's default is 20.
+ */
+@property (nonatomic, assign) CGFloat raduisForIcons;
+
 
 @end

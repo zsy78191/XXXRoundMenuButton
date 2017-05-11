@@ -21,6 +21,7 @@
 @end
 
 @interface XXX_roundCircle : UIView
+@property (nonatomic, assign) CGFloat raduisForIcons;
 @property (nonatomic, strong) UIColor* circleColor;
 - (void)clean;
 - (void)animatedLoadIcons:(NSArray<UIImage*>*)icons start:(float)start layoutDegree:(float)layoutDegree oneByOne:(BOOL)onebyone;
@@ -130,6 +131,7 @@
 
 - (void)setup{
     self.offsetAfterOpened = CGSizeZero;
+    self.raduisForIcons = 20;
     self.mainColor = [UIColor colorWithRed: 0.95 green: 0.2 blue: 0.39 alpha: 1];
     
     self.jumpOutButtonOnebyOne = NO;
@@ -137,6 +139,12 @@
     self.centerButtonSize = CGSizeMake(50, 50);
     [self addSubview:self.roundCircle];
     [self addSubview:self.centerButton];
+}
+
+- (void)setRaduisForIcons:(CGFloat)raduisForIcons
+{
+    _raduisForIcons = raduisForIcons;
+    [self.roundCircle setRaduisForIcons:raduisForIcons];
 }
 
 - (void)setMainColor:(UIColor *)mainColor
@@ -233,12 +241,12 @@
                      animations:^{
                          
                          if (selected) {
-                             self.transform = CGAffineTransformMakeTranslation(self.offsetAfterOpened.width, self.offsetAfterOpened.height);
+                             self.transform = CGAffineTransformConcat(self.transform, CGAffineTransformMakeTranslation(self.offsetAfterOpened.width, self.offsetAfterOpened.height));
                              self.roundCircle.frame = self.bounds;
                          }
                          else
                          {
-                             self.transform = CGAffineTransformIdentity;
+                             self.transform = CGAffineTransformConcat(self.transform, CGAffineTransformMakeTranslation(-self.offsetAfterOpened.width, -self.offsetAfterOpened.height));
                              self.roundCircle.frame = self.centerButton.frame;
                          }
                          
@@ -429,7 +437,7 @@
 {
     [self clean];
     
-    CGFloat raduis = self.frame.size.width / 2 - 30;
+    CGFloat raduis = self.frame.size.width / 2 - self.raduisForIcons;
     
     [icons enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
