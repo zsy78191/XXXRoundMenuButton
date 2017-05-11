@@ -129,7 +129,7 @@
 }
 
 - (void)setup{
-    
+    self.offsetAfterOpened = CGSizeZero;
     self.mainColor = [UIColor colorWithRed: 0.95 green: 0.2 blue: 0.39 alpha: 1];
     
     self.jumpOutButtonOnebyOne = NO;
@@ -233,13 +233,13 @@
                      animations:^{
                          
                          if (selected) {
-                             
+                             self.transform = CGAffineTransformMakeTranslation(self.offsetAfterOpened.width, self.offsetAfterOpened.height);
                              self.roundCircle.frame = self.bounds;
                          }
                          else
                          {
+                             self.transform = CGAffineTransformIdentity;
                              self.roundCircle.frame = self.centerButton.frame;
-                            
                          }
                          
                      } completion:^(BOOL finished) {

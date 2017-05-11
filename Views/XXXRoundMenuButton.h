@@ -66,5 +66,11 @@ typedef NS_OPTIONS(NSInteger, XXXIconType) {
 @property (nonatomic, assign) BOOL isOpened;
 
 
+/**
+ Offset after menu is opened.
+ */
+@property (nonatomic, assign) CGSize offsetAfterOpened;
+
+
 
 @end

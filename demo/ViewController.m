@@ -71,9 +71,12 @@
     [self.roundMenu2 loadButtonWithIcons:@[
                                           [UIImage imageNamed:@"icon_can"],
                                           [UIImage imageNamed:@"icon_pos"],
+                                          [UIImage imageNamed:@"icon_img"],
+                                          [UIImage imageNamed:@"icon_can"],
+                                          [UIImage imageNamed:@"icon_pos"],
                                           [UIImage imageNamed:@"icon_img"]
                                           
-                                          ] startDegree:-M_PI layoutDegree:M_PI/2];
+                                          ] startDegree:-M_PI layoutDegree:M_PI];
     [self.roundMenu2 setButtonClickBlock:^(NSInteger idx) {
         
         NSLog(@"button %@ clicked !",@(idx));
@@ -85,6 +88,8 @@
     self.roundMenu2.tintColor = [UIColor whiteColor];
     
     self.roundMenu2.mainColor = [UIColor colorWithRed:0.13 green:0.58 blue:0.95 alpha:1];
+    
+    self.roundMenu2.offsetAfterOpened = CGSizeMake(-80, -80);
 }
 
 - (void)didReceiveMemoryWarning {
