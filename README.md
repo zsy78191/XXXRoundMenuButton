@@ -1,13 +1,17 @@
-#new at 2017.5.11
+# New at 2017.5.11
 Add offset after the menu is opened.
 ```objc
 self.roundMenu2.offsetAfterOpened = CGSizeMake(-80, -80);
 ```
 ![preview](https://raw.githubusercontent.com/zsy78191/XXXRoundMenuButton/master/Untitled.gif)
 
-#new at 6.16
+# New at 6.16
 1. Add function to set custom image as center button icon.
 2. Add swift demo.
+
+## CocoaPods
+
+
 
 # XXXRoundMenuButton
 一个简单的圆形菜单控件。设计来自InVision团队的 [Filter Menu by Anton Aheichanka for InVision](https://dribbble.com/shots/1956586-Filter-Menu) 和  [Secret Project by Anton Aheichanka Follow for InVision Follow](https://dribbble.com/shots/1928064-Secret-Project)
@@ -17,7 +21,7 @@ and [Secret Project by Anton Aheichanka Follow for InVision Follow](https://drib
 
 ![preview](https://raw.githubusercontent.com/zsy78191/XXXRoundMenuButton/master/XXXRoundMenu.gif)
 
-##Angle
+## Angle
  
 ```objc
 /**
@@ -33,11 +37,11 @@ and [Secret Project by Anton Aheichanka Follow for InVision Follow](https://drib
 
 startDegree 0 degree is ⬇️ ， layoutDegree is the span between start and end, **counterclockwise**.
 
-##Update
+## Update
 
 2016.4.19 Fix the issue that touch event can't send to UIView covered by XXXRoundMenuButton
 
-##Easy use interface
+## Easy use interface
 
 ```objc
 self.roundMenu.centerButtonSize = CGSizeMake(44, 44);
