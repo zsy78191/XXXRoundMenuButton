@@ -1,4 +1,7 @@
+Support CocoaPods.
+
 # New at 2017.5.11
+
 Add offset after the menu is opened.
 ```objc
 self.roundMenu2.offsetAfterOpened = CGSizeMake(-80, -80);
@@ -11,8 +14,9 @@ self.roundMenu2.offsetAfterOpened = CGSizeMake(-80, -80);
 
 ## CocoaPods
 
-
-
+```
+pod 'XXXRoundMenuButton'
+```
 # XXXRoundMenuButton
 一个简单的圆形菜单控件。设计来自InVision团队的 [Filter Menu by Anton Aheichanka for InVision](https://dribbble.com/shots/1956586-Filter-Menu) 和  [Secret Project by Anton Aheichanka Follow for InVision Follow](https://dribbble.com/shots/1928064-Secret-Project)
 

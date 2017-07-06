@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XXXRoundMenuButton"
-  s.version      = "1.0"
+  s.version      = "1.0.2"
   s.summary      = "A simple circle style menu. Design from InVision team"
 
   # This description is used to generate tags and improve search results.
