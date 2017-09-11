@@ -105,6 +105,11 @@
     self.layoutDegree = layoutDegree;
 }
 
+-(void)changeButtonWithIcon:(UIImage*)icon AtIndex:(NSUInteger)index
+{
+    [self.icons replaceObjectAtIndex:index withObject:icon];
+}
+
 - (void)drawCentenIconInRect:(CGRect)rect state:(UIControlState)state
 {
     if (self.drawCenterButtonIconBlock) {
