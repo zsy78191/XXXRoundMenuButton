@@ -53,6 +53,14 @@ typedef NS_OPTIONS(NSInteger, XXXIconType) {
 - (void)loadButtonWithIcons:(NSArray<UIImage*>*)icons startDegree:(float)degree layoutDegree:(float)layoutDegree;
 
 /**
+ *  change icon image
+ *
+ *  @param icon         a UIImage
+ *  @param index        icon index
+ */
+-(void)changeButtonWithIcon:(UIImage*)icon AtIndex:(NSUInteger)index;
+
+/**
  *  click block
  */
 @property (nonatomic, strong) void (^buttonClickBlock) (NSInteger idx);
