@@ -105,6 +105,11 @@
     return _descriptions;
 }
 
+- (void)loadButtonWithIcons:(NSArray<UIImage*>*)icons startDegree:(float)degree layoutDegree:(float)layoutDegree;
+{
+    [self loadButtonWithIcons:icons startDegree:degree layoutDegree:layoutDegree WithIconDescription:nil];
+}
+
 - (void)loadButtonWithIcons:(NSArray<UIImage *> *)icons startDegree:(float)degree layoutDegree:(float)layoutDegree WithIconDescription:(NSArray<NSString*> *)descriptions
 {
     [self.icons removeAllObjects];
@@ -453,7 +458,7 @@
 {
     [self clean];
     
-    CGFloat raduis = self.frame.size.width / 2 - self.raduisForIcons;
+    CGFloat raduis = self.frame.size.width / 2 - self.raduisForIcons - 10;
     
     [icons enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
@@ -461,10 +466,26 @@
         [button setImage:obj forState:UIControlStateNormal];
         button.tintColor = self.tintColor;
         
-        button.titleLabel.font=[UIFont systemFontOfSize:11.0];
-        [button setTitle:[descriptions objectAtIndex:idx]  forState:UIControlStateNormal];
-        [button setTitleEdgeInsets:UIEdgeInsetsMake(58, -40, 5, 0)];
+//        button.titleLabel.font = [UIFont systemFontOfSize:11.0];
+//        if ([descriptions count] > idx) {
+//            [button setTitle:[descriptions objectAtIndex:idx] forState:UIControlStateNormal];
+//        }
+//        [button setTitleEdgeInsets:];
+//        [button]
 
+        if ([descriptions count] > idx) {
+            UILabel* l = [[UILabel alloc] initWithFrame:CGRectMake(-15, 25, 70, 30)];
+            [l setText:[descriptions objectAtIndex:idx]];
+            [l setTextColor:[self tintColor]];
+            [l setFont:[UIFont systemFontOfSize:12]];
+            [l setTextAlignment:NSTextAlignmentCenter];
+            [l setTag:11101];
+            [button addSubview:l];
+        }
+
+//        l.center = CGPointMake(self.center.x + raduis*0.5 * sin(start + layoutDegree/(icons.count-1)*idx), self.center.y + raduis*0.5 * cos(start + layoutDegree/(icons.count-1)*idx));
+        
+        
         [self addSubview:button];
         
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -482,7 +503,13 @@
                          animations:^{
                              button.alpha = 1;
                              button.transform = CGAffineTransformIdentity;
-                             button.center = CGPointMake(self.center.x + raduis * sin(start + layoutDegree/(icons.count-1)*idx), self.center.y + raduis * cos(start + layoutDegree/(icons.count-1)*idx));
+                             if ([button viewWithTag:11101]) {
+                                button.center = CGPointMake(self.center.x + raduis * sin(start + layoutDegree/(icons.count-1)*idx), self.center.y + raduis * cos(start + layoutDegree/(icons.count-1)*idx) - 8);
+                             }
+                             else{
+                                button.center = CGPointMake(self.center.x + raduis * sin(start + layoutDegree/(icons.count-1)*idx), self.center.y + raduis * cos(start + layoutDegree/(icons.count-1)*idx));
+                             }
+                             
                          } completion:^(BOOL finished) {
                              
                          }];

@@ -54,17 +54,7 @@
                                           [UIImage imageNamed:@"icon_pos"],
                                           [UIImage imageNamed:@"icon_img"]
                                           
-                                          ] startDegree:0 layoutDegree:M_PI*2*7/8
-                    WithIconDescription:@[
-                                          @"日历",
-                                          @"位置",
-                                          @"相册",
-                                          @"日期",
-                                          @"地理",
-                                          @"照片",
-                                          @"农历",
-                                          @"方位",
-                                          @"写真"]];
+                                          ] startDegree:0 layoutDegree:M_PI*2*7/8];
     
     [self.roundMenu setButtonClickBlock:^(NSInteger idx) {
         
@@ -81,19 +71,13 @@
     [self.roundMenu2 loadButtonWithIcons:@[
                                           [UIImage imageNamed:@"icon_can"],
                                           [UIImage imageNamed:@"icon_pos"],
-                                          [UIImage imageNamed:@"icon_img"],
-                                          [UIImage imageNamed:@"icon_can"],
-                                          [UIImage imageNamed:@"icon_pos"],
                                           [UIImage imageNamed:@"icon_img"]
                                           
                                           ] startDegree:-M_PI layoutDegree:M_PI
                      WithIconDescription:@[
-                                           @"日历",
-                                           @"位置",
-                                           @"图片",
-                                           @"日期",
-                                           @"GPS",
-                                           @"写真"
+                                           @"Canlander",
+                                           @"Position",
+                                           @"Pitures",
                                            ]];
     [self.roundMenu2 setButtonClickBlock:^(NSInteger idx) {
         
