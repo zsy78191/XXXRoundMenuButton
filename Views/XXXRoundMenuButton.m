@@ -24,7 +24,8 @@
 @property (nonatomic, assign) CGFloat raduisForIcons;
 @property (nonatomic, strong) UIColor* circleColor;
 - (void)clean;
-- (void)animatedLoadIcons:(NSArray<UIImage*>*)icons start:(float)start layoutDegree:(float)layoutDegree oneByOne:(BOOL)onebyone;
+- (void)animatedLoadIcons:(NSArray<UIImage*>*)icons start:(float)start layoutDegree:(float)layoutDegree oneByOne:(BOOL)onebyone WithDescriptions:(NSArray<NSString*>*)descriptions;
+
 @end
 
 @interface XXXRoundMenuButton ()
@@ -39,7 +40,7 @@
 @property (nonatomic, assign) float startDegree;
 @property (nonatomic, assign) float layoutDegree;
 @property (nonatomic, strong) NSMutableArray* icons;
-
+@property (nonatomic, strong) NSMutableArray* descriptions;
 
 @end
 
@@ -96,11 +97,19 @@
     return _icons;
 }
 
-- (void)loadButtonWithIcons:(NSArray<UIImage *> *)icons startDegree:(float)degree layoutDegree:(float)layoutDegree
+- (NSMutableArray *)descriptions
+{
+    if (!_descriptions){
+        _descriptions=[NSMutableArray array];
+    }
+    return _descriptions;
+}
+
+- (void)loadButtonWithIcons:(NSArray<UIImage *> *)icons startDegree:(float)degree layoutDegree:(float)layoutDegree WithIconDescription:(NSArray<NSString*> *)descriptions
 {
     [self.icons removeAllObjects];
     [self.icons addObjectsFromArray:icons];
-    
+    [self.descriptions addObjectsFromArray:descriptions];
     self.startDegree = degree;
     self.layoutDegree = layoutDegree;
 }
@@ -261,7 +270,8 @@
                          [self.roundCircle setNeedsDisplay];
                          
                          if (selected) {
-                             [self.roundCircle animatedLoadIcons:self.icons start:self.startDegree layoutDegree:self.layoutDegree oneByOne:self.jumpOutButtonOnebyOne];
+                             [self.roundCircle animatedLoadIcons:self.icons start:self.startDegree layoutDegree:self.layoutDegree oneByOne:self.jumpOutButtonOnebyOne WithDescriptions:self.descriptions];
+
                          }
                          
                      }];
@@ -438,7 +448,8 @@
     }
 }
 
-- (void)animatedLoadIcons:(NSArray<UIImage*>*)icons start:(float)start layoutDegree:(float)layoutDegree oneByOne:(BOOL)onebyone
+- (void)animatedLoadIcons:(NSArray<UIImage*>*)icons start:(float)start layoutDegree:(float)layoutDegree oneByOne:(BOOL)onebyone WithDescriptions:(NSArray<NSString*>*)descriptions
+
 {
     [self clean];
     
@@ -449,6 +460,11 @@
         UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
         [button setImage:obj forState:UIControlStateNormal];
         button.tintColor = self.tintColor;
+        
+        button.titleLabel.font=[UIFont systemFontOfSize:11.0];
+        [button setTitle:[descriptions objectAtIndex:idx]  forState:UIControlStateNormal];
+        [button setTitleEdgeInsets:UIEdgeInsetsMake(58, -40, 5, 0)];
+
         [self addSubview:button];
         
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
