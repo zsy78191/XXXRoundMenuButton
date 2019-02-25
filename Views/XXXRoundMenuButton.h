@@ -61,6 +61,9 @@ typedef NS_OPTIONS(NSInteger, XXXIconType) {
  */
 -(void)changeButtonWithIcon:(UIImage*)icon AtIndex:(NSUInteger)index;
 
+-(void)setButtonEnable:(BOOL)enable atIndex:(NSUInteger)index;
+
+
 /**
  *  click block
  */

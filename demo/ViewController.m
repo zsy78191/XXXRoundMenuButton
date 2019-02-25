@@ -79,8 +79,11 @@
                                            @"Position",
                                            @"Pitures",
                                            ]];
+    
+    [self.roundMenu2 setButtonEnable:NO atIndex:1];
     [self.roundMenu2 setButtonClickBlock:^(NSInteger idx) {
-        
+        [self.roundMenu setIsOpened:NO];
+ 
         NSLog(@"button %@ clicked !",@(idx));
     }];
     

@@ -1,5 +1,13 @@
 Support CocoaPods.
 
+# New at 2019.02.25
+
+
+1.  Use `@property (nonatomic, assign) BOOL isOpened;` can open or close `RoundMenu`.
+
+2.  use `-(void)setButtonEnable:(BOOL)enable atIndex:(NSUInteger)index;` can config button with `RoundMenu`.
+
+
 # New at 2017.5.11
 
 Add offset after the menu is opened.

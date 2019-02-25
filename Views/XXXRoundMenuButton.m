@@ -25,6 +25,8 @@
 @property (nonatomic, strong) UIColor* circleColor;
 - (void)clean;
 - (void)animatedLoadIcons:(NSArray<UIImage*>*)icons start:(float)start layoutDegree:(float)layoutDegree oneByOne:(BOOL)onebyone WithDescriptions:(NSArray<NSString*>*)descriptions;
+@property (nonatomic, strong) NSMutableDictionary* disableDic;
+- (void)setEnable:(BOOL)enable atIndex:(NSUInteger)idx;
 
 @end
 
@@ -122,6 +124,11 @@
 -(void)changeButtonWithIcon:(UIImage*)icon AtIndex:(NSUInteger)index
 {
     [self.icons replaceObjectAtIndex:index withObject:icon];
+}
+
+-(void)setButtonEnable:(BOOL)enable atIndex:(NSUInteger)index
+{
+    [self.roundCircle setEnable:enable atIndex:index];
 }
 
 - (void)drawCentenIconInRect:(CGRect)rect state:(UIControlState)state
@@ -244,6 +251,24 @@
     return [self.centerButton centerIcon];
 }
 
+- (void)setIsOpened:(BOOL)isOpened
+{
+    _isOpened = isOpened;
+    
+    if (!_isOpened) {
+        if (self.centerButton.selected) {
+            self.centerButton.selected = NO;
+        }
+    }
+    else {
+//        [self setSelected:YES];
+        if (!self.centerButton.selected) {
+            [self.centerButton setSelected:YES];
+        }
+        
+    }
+}
+
 - (void)setSelected:(BOOL)selected
 {
     [super setSelected:selected];
@@ -252,7 +277,7 @@
         [self.roundCircle clean];
     }
     
-    self.isOpened = selected;
+    _isOpened = selected;
     [UIView animateWithDuration:0.24
                           delay:0
          usingSpringWithDamping:0.6 initialSpringVelocity:5
@@ -439,6 +464,19 @@
 
 @implementation XXX_roundCircle
 
+- (void)setEnable:(BOOL)enable atIndex:(NSUInteger)idx
+{
+    self.disableDic[@(idx)] = @(enable);
+}
+
+- (NSMutableDictionary *)disableDic
+{
+    if (!_disableDic) {
+        _disableDic = [[NSMutableDictionary alloc] init];
+    }
+    return _disableDic;
+}
+
 - (void)clean
 {
     [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -462,9 +500,14 @@
     
     [icons enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
+       
         UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
         [button setImage:obj forState:UIControlStateNormal];
         button.tintColor = self.tintColor;
+        NSNumber* enable = self.disableDic[@(idx)];
+        if (enable && ![enable boolValue]) {
+            [button setEnabled:NO];
+        }
         
 //        button.titleLabel.font = [UIFont systemFontOfSize:11.0];
 //        if ([descriptions count] > idx) {
